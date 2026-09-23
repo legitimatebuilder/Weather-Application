@@ -1,0 +1,257 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.contents {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #222;
+}
+
+.contents .title {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: gold;
+}
+
+.contents .container {
+    position: relative;
+    width: 380px;
+    height: 450px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+.contents .container .search {
+    position: relative;
+    width: 240px;
+    height: 45px;
+    background: #ebfffc;
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 0px 15px;
+    border: none;
+    outline: none;
+}
+
+.contents .container .search-btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #ebfffc;
+    border-radius: 50px;
+    top: 35px;
+    right: 40px;
+    border: none;
+    outline: none;
+    background-image: url(./Images/search.png);
+    background-position: center;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.contents .container .weather {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 110px;
+}
+
+.contents .container .weather-icon {
+    width: 120px;
+    height: 120px;
+}
+
+.contents .container .temperature {
+    position: relative;
+    font-size: 26px;
+    color: whitesmoke;
+    margin-left: 30px;
+}
+
+.contents .container .city-name {
+    position: relative;
+    font-size: 26px;
+    color: whitesmoke;
+    margin-top: 5px;
+}
+
+.contents .container .weather-details {
+    position: relative;
+    margin-top: 65px;
+    margin-left: 30px;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+}
+
+/* Note:  There's usually no need for flexbox properties when you have placed the elements in absolute position or you have set their position as absolute. */
+
+.contents .container .weather-details .humidity-image {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+}
+
+
+.contents .container .weather-details .humidity-image img {
+    width: 50px;
+    height: 50px;
+}
+
+.contents .container .weather-details .humidity-text-one {
+    position: absolute;
+    font-size: 28px;
+    top: -7px;
+    left: 60px;
+    color: whitesmoke;
+}
+
+.contents .container .weather-details .humidity-text-two {
+    position: absolute;
+    font-size: 22px;
+    top: 38px;
+    left: 60px;
+    color: whitesmoke;
+}
+
+.contents .container .weather-details .wind-image {
+    position: absolute;
+    top: -12px;
+    left: 175px;
+}
+
+.contents .container .weather-details .wind-image img {
+    width: 70px;
+    height: 70px;
+}
+
+.contents .container .weather-details .wind-text-one {
+    position: absolute;
+    top: -5px;
+    left: 252px;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+
+.contents .container .weather-details .wind-text-two {
+    position: absolute;
+    top: 30px;
+    left: 252px;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+.contents .container .weather {
+    display: none;
+}
+
+.contents .container .weather-details {
+    display: none;
+}
+
+.contents .container .error {
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: whitesmoke;
+    display: none;
+}
+
+.contents .container .entry-header {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    display: block;
+}
+
+.contents .container .entry-header .entry-heading {
+    color: whitesmoke;
+}
+
+.contents .container .entry-header .city-image {
+    width: 120px;
+    height: 120px;
+    margin-top: -40px;
+    margin-left: 50px;
+}
+
+/* PopUp Modal */
+.contents .modal-btn {
+    position: absolute;
+    padding: 12px 40px;
+    background: #482bcc;
+    top: 94%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.contents .modal-btn:hover {
+    background: maroon;
+}
+
+.contents .modal-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.contents .modal-container .modal {
+    position: fixed;
+    width: 600px;
+    height: 350px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 50px 50px;
+}
+
+.contents .modal-container .modal .close-btn {
+    position: relative;
+    padding: 12px 24px;
+    background: #000;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.modal-container .modal .modal-text {
+    margin-top: 20px;
+}

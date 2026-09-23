@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./CSS/Styles.css">
+    <script src="./JS/Script.js" defer></script>
+</head>
+
+<body>
+    <section class="contents">
+        <h1 class="title"><u>Weather App</u></h1>
+        <div class="container">
+            <input type="text" class="search" placeholder="enter city name" spellcheck="false">
+            <button class="search-btn"></button>
+            <div class="error">
+                <p class="error-text">Invalid city name</p>
+            </div>
+            <!-- You can also add error text without div -->
+            <div class="weather">
+                <img src="./CSS/Images/rain.png" class="weather-icon">
+                <h1 class="temperature">22&#8451</h1>
+                <h2 class="city-name">New York</h2>
+            </div>
+            <div class="entry-header">
+                <img src="./CSS/Images/city.svg" class="city-image">
+                <h2 class="entry-heading">Enter a city name?</h2>
+            </div>
+            <div class="weather-details">
+                <div class="humidity-image">
+                    <img src="./CSS/Images/humidity.png">
+                </div>
+                <p class="humidity-text-one humidity">50%</p>
+                <p class="humidity-text-two">Humidity</p>
+                <div class="wind-image">
+                    <img src="./CSS/Images/wind.png">
+                </div>
+                <p class="wind-text-one wind-speed">15 Km/hr</p>
+                <p class="wind-text-two">Wind Speed</p>
+            </div>
+        </div>
+        <button class="modal-btn" id="open-btn">Weather Info!</button>
+        <div class="modal-container">
+            <div class="modal">
+                <h2 class="modal-title">OpenWeather</h2>
+                <p class="modal-text">
+                    OpenWeather (part of OWM Group) is a global provider of weather data and forecasting solutions.
+                    Using advanced meteorology, machine learning, and powerful data infrastructure, we deliver
+                    historical, current, and forecast weather data for any location worldwide through fast, reliable
+                    APIs.
+                    <br>Headquartered in London, UK, OpenWeather supports developers, businesses, and researchers with
+                    accurate, scalable, and easy-to-integrate weather intelligence.
+                </p>
+                <button class="close-btn" id="close-btn">Close</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
